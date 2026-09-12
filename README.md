@@ -1,1 +1,1 @@
-# SmartStockERP
+# AR_SOFT_G8_SMARTSTOCK
