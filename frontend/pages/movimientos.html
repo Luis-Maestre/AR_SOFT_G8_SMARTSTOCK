@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SmartStock ERP — Movimientos</title>
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+<div class="app-shell">
+  <aside class="sidebar">
+    <div class="brand"><span class="mark">SmartStock</span><span class="tag">ERP</span></div>
+    <nav>
+      <a href="dashboard.html"><span class="icon">◆</span> Dashboard</a>
+      <a href="productos.html"><span class="icon">▣</span> Productos</a>
+      <a href="inventario.html"><span class="icon">▤</span> Inventario</a>
+      <a href="movimientos.html"><span class="icon">↕</span> Movimientos</a>
+      <a href="reposiciones.html"><span class="icon">↻</span> Reposiciones</a>
+      <a href="reportes.html"><span class="icon">▦</span> Reportes</a>
+      <a href="usuarios.html"><span class="icon">◐</span> Usuarios</a>
+    </nav>
+    <div class="sidebar-foot">SmartStock ERP · Fase 2<br>Prototipo estructurado</div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <input class="search" type="text" placeholder="Buscar producto, lote o movimiento...">
+      <div class="user"><span id="user-label">Cargando...</span><div class="avatar" id="user-avatar">?</div></div>
+    </header>
+
+    <main class="content">
+      <div class="content-header">
+        <div>
+          <h1>Movimientos de inventario</h1>
+          <p class="mt-0 text-muted">Registro de entradas, salidas y ajustes de stock</p>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>Registrar movimiento</h2>
+        <form id="form-movimiento" class="form-grid">
+          <div class="field">
+            <label for="mov-producto">Producto</label>
+            <select id="mov-producto" required></select>
+          </div>
+          <div class="field">
+            <label for="mov-tipo">Tipo de movimiento</label>
+            <select id="mov-tipo" required>
+              <option value="entrada">Entrada</option>
+              <option value="salida">Salida</option>
+              <option value="ajuste">Ajuste</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="mov-cantidad">Cantidad</label>
+            <input type="number" id="mov-cantidad" placeholder="10" min="1" required>
+          </div>
+          <div class="field">
+            <label for="mov-motivo">Motivo</label>
+            <input type="text" id="mov-motivo" placeholder="Ej. Venta mostrador">
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn">Registrar movimiento</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="panel">
+        <h2>Historial de movimientos</h2>
+        <div id="tabla-movimientos"></div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<script src="../js/data/mock-data.js"></script>
+<script src="../js/models/usuario.js"></script>
+<script src="../js/views/render.js"></script>
+<script src="../js/controllers/navController.js"></script>
+<script src="../js/controllers/movimientoController.js"></script>
+</body>
+</html>

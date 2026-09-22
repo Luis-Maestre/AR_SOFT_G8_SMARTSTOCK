@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SmartStock ERP — Iniciar sesion</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="login-shell">
+  <div class="login-side">
+    <div class="mark">SmartStock</div>
+    <p class="claim">
+      Control de inventario por lote y fecha de vencimiento para
+      droguerias de barrio. Registra entradas y salidas, recibe alertas
+      antes de que un medicamento se agote o venza, y mantén trazabilidad
+      completa de cada movimiento.
+    </p>
+    <div class="facts">
+      <div class="f-title">FEFO</div>
+      <div class="f-sub">Primero en expirar, primero en salir — aplicado automaticamente por lote</div>
+    </div>
+  </div>
+
+  <div class="login-form-wrap">
+    <div class="login-card">
+      <h1>Iniciar sesion</h1>
+      <p class="hint">Ingresa con tu correo de droguería</p>
+
+      <form id="login-form">
+        <div class="field">
+          <label for="correo">Correo electronico</label>
+          <input type="email" id="correo" placeholder="laura@drogueriasanjose.co" value="laura@drogueriasanjose.co" required>
+        </div>
+        <div class="field">
+          <label for="password">Contrasena</label>
+          <input type="password" id="password" placeholder="••••••••" value="demo1234" required>
+        </div>
+        <button type="submit" class="btn">Entrar</button>
+      </form>
+
+      <div class="demo-note">
+        Prototipo Fase 2: cualquier correo/contrasena ingresa al sistema.
+        La autenticacion real se implementara en la Fase 3 contra el
+        backend Spring Boot.
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="js/data/mock-data.js"></script>
+<script src="js/models/usuario.js"></script>
+<script src="js/controllers/authController.js"></script>
+</body>
+</html>
