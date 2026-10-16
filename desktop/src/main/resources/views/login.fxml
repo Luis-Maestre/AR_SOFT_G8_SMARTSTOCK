@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<StackPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+           fx:controller="co.edu.umb.smartstock.desktop.controller.LoginController"
+           styleClass="fondo-login">
+    <VBox spacing="14" maxWidth="340" maxHeight="360" alignment="CENTER_LEFT" styleClass="tarjeta">
+        <Label text="SmartStock ERP" styleClass="titulo"/>
+        <Label text="Control de inventario para droguerías" styleClass="subtitulo"/>
+        <Label text="Correo"/>
+        <TextField fx:id="correo" promptText="usuario@drogueria.com"/>
+        <Label text="Contraseña"/>
+        <PasswordField fx:id="clave" onAction="#ingresar"/>
+        <Button text="Ingresar" onAction="#ingresar" maxWidth="Infinity" styleClass="boton"/>
+        <Label fx:id="mensaje" styleClass="aviso"/>
+    </VBox>
+</StackPane>

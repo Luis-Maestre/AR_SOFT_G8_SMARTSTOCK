@@ -1,0 +1,10 @@
+.root { -fx-font-family: "Segoe UI", Arial, sans-serif; -fx-font-size: 14px; }
+.fondo-login { -fx-background-color: #0E3B43; }
+.tarjeta { -fx-background-color: white; -fx-padding: 28; -fx-background-radius: 10; }
+.titulo { -fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #0E3B43; }
+.subtitulo { -fx-text-fill: #5B6B6E; }
+.boton { -fx-background-color: #0E6E7A; -fx-text-fill: white; -fx-font-weight: bold; }
+.aviso { -fx-text-fill: #5B6B6E; }
+.barra { -fx-background-color: #0E3B43; -fx-padding: 12 20; }
+.titulo-barra { -fx-text-fill: white; -fx-font-size: 18px; -fx-font-weight: bold; }
+.contenido { -fx-padding: 20; }
