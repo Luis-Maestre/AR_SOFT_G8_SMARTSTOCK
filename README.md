@@ -12,7 +12,7 @@ Software, Universidad Manuela Beltrán.
 ```
 Fase 1: Idea y propuesta inicial
    ↓
-Fase 2: Prototipo según la arquitectura   ← estamos aquí
+Fase 2 actual: Prototipo segun la arquitectura
    ↓
 Fase 3: Funcionalidad completa
 ```
@@ -23,14 +23,14 @@ Monolito modular con arquitectura por capas:
 
 | Capa | Tecnología |
 |---|---|
-| Interfaz de usuario | **JavaFX** (aplicación de escritorio) |
+| Interfaz de usuario | **JavaFX** |
 | Lógica de negocio | Java + Spring Boot |
 | Modelos | Entidades JPA |
 | Datos | PostgreSQL con Spring Data JPA |
 | Infraestructura | Docker + GitHub |
 
 El módulo de reposición inteligente usará Python y se conectará al
-backend más adelante.
+backend más adelante
 
 ## Carpetas del repositorio
 
@@ -45,9 +45,9 @@ backend más adelante.
 └── docker-compose.yml
 ```
 
-## Cómo probarlo
+## Como probarlo
 
-Necesitas Java 17 o superior y Maven. Abre dos terminales:
+Necesitas Java 17 o superior y Maven. Abrir dos terminales:
 
 ```bash
 # 1) Servidor
@@ -59,7 +59,7 @@ cd desktop
 mvn javafx:run
 ```
 
-En la pantalla de login escribe cualquier correo y contraseña (modo demostración).
+En la pantalla de login escribe cualquier correo y contraseña para demostración
 
 ## Estado actual
 
@@ -69,7 +69,6 @@ En la pantalla de login escribe cualquier correo y contraseña (modo demostraci�
 | `desktop/` | Funciona: login y pantalla con productos y lotes FEFO, datos tomados del servidor |
 | `backend/` | Funciona: arranca con base en memoria, lista productos y lotes FEFO. Faltan alertas, auditoría y reposición |
 | `docs/ddl/` | Listo: script SQL con las 11 tablas |
-| `docs/diagramas/` | Pendiente: subir los diagramas de la Fase 1 |
 
 ## Equipo
 
