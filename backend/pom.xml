@@ -15,7 +15,7 @@
     <artifactId>smartstock-backend</artifactId>
     <version>0.2.0</version>
     <name>smartstock-backend</name>
-    <description>SmartStock ERP - Backend (Fase 2: esqueleto de arquitectura)</description>
+    <description>SmartStock ERP - Backend</description>
 
     <properties>
         <java.version>17</java.version>
@@ -33,6 +33,12 @@
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <!-- Base de datos en memoria para ejecutar el proyecto sin instalar nada -->
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
             <scope>runtime</scope>
         </dependency>
         <dependency>

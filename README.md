@@ -12,7 +12,7 @@ Software, Universidad Manuela Beltrán.
 ```
 Fase 1: Idea y propuesta inicial
    ↓
-Fase 2: Prototipo según la arquitectura (etapa actual)
+Fase 2: Prototipo según la arquitectura   ← estamos aquí
    ↓
 Fase 3: Funcionalidad completa
 ```
@@ -36,7 +36,7 @@ backend más adelante.
 
 ```
 .
-├── desktop/          # Aplicación de escritorio con JavaFX (en construcción)
+├── desktop/          # Aplicación de escritorio con JavaFX
 ├── backend/          # Servidor Spring Boot: entidades, repositorios y API
 ├── docs/
 │   ├── ddl/          # Script SQL de la base de datos
@@ -45,13 +45,29 @@ backend más adelante.
 └── docker-compose.yml
 ```
 
+## Cómo probarlo
+
+Necesitas Java 17 o superior y Maven. Abre dos terminales:
+
+```bash
+# 1) Servidor
+cd backend
+mvn spring-boot:run
+
+# 2) Aplicación de escritorio
+cd desktop
+mvn javafx:run
+```
+
+En la pantalla de login escribe cualquier correo y contraseña (modo demostración).
+
 ## Estado actual
 
 | Parte | Estado |
 |---|---|
 | `docs/maqueta-ui/` | Listo: maqueta de 8 pantallas, solo como guía de diseño |
-| `desktop/` | En construcción: aplicación JavaFX |
-| `backend/` | Esqueleto: entidades, repositorios y servicios básicos, sin lógica de negocio |
+| `desktop/` | Funciona: login y pantalla con productos y lotes FEFO, datos tomados del servidor |
+| `backend/` | Funciona: arranca con base en memoria, lista productos y lotes FEFO. Faltan alertas, auditoría y reposición |
 | `docs/ddl/` | Listo: script SQL con las 11 tablas |
 | `docs/diagramas/` | Pendiente: subir los diagramas de la Fase 1 |
 

@@ -3,21 +3,39 @@
 Servidor en **Java + Spring Boot**. Guarda los datos y los entrega a la
 aplicación de escritorio (JavaFX) por medio de una API.
 
-## Estado actual
+## Cómo encenderlo
 
-Es un esqueleto: ya existen las piezas pero todavía no hay lógica de negocio
+Requisitos: Java 17 o superior y Maven. No hace falta instalar ninguna
+base de datos: usa una en memoria con datos de ejemplo.
+
+```bash
+cd backend
+mvn spring-boot:run
+```
+
+Para comprobar que funciona, abrir en el navegador:
+
+- http://localhost:8080/api/health → debe responder `"estado":"ok"`
+- http://localhost:8080/api/productos → lista de productos de ejemplo
+
+Los datos de ejemplo están en `src/main/resources/data.sql` y se
+reinician cada vez que se apaga el servidor.
+
+Para usar PostgreSQL en lugar de la base en memoria, ver
+`src/main/resources/application-postgres.properties`.
+
+## Organización
 
 ```
 backend/src/main/java/co/edu/umb/smartstock/
 ├── SmartStockApplication.java   # Arranque del servidor
-├── model/        # 11 entidades
+├── model/        # 11 entidades (Producto, Lote, Usuario, ...)
 ├── repository/   # Acceso a la base de datos
-├── controller/   # 7 controladores de la API
-└── service/      # Lógica de negocio (aun vacio)
+├── controller/   # Controladores de la API
+└── service/      # Lógica de negocio (vacío por ahora)
 ```
 
 ## Pendiente
 
-- Conectar la base de datos.
-- Programar la política FEFO, las alertas y la auditoría.
-- Conectar con el cliente de escritorio JavaFX (`desktop/`).
+- Alertas de stock mínimo, auditoría y reposición.
+- Inicio de sesión real.

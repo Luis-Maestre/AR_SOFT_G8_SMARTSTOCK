@@ -26,4 +26,14 @@ public class Auditoria {
     public void setIdAuditoria(Long idAuditoria) { this.idAuditoria = idAuditoria; }
     public String getAccion() { return accion; }
     public void setAccion(String accion) { this.accion = accion; }
+    public String getTablaAfectada() { return tablaAfectada; }
+    public void setTablaAfectada(String tablaAfectada) { this.tablaAfectada = tablaAfectada; }
+    public Long getRegistroAfectado() { return registroAfectado; }
+    public void setRegistroAfectado(Long registroAfectado) { this.registroAfectado = registroAfectado; }
+    public LocalDateTime getFecha() { return fecha; }
+    public void setFecha(LocalDateTime fecha) { this.fecha = fecha; }
+    public String getDescripcion() { return descripcion; }
+    public void setDescripcion(String descripcion) { this.descripcion = descripcion; }
+    public Usuario getUsuario() { return usuario; }
+    public void setUsuario(Usuario usuario) { this.usuario = usuario; }
 }

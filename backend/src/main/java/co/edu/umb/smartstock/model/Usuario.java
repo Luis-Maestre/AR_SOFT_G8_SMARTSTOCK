@@ -1,5 +1,6 @@
 package co.edu.umb.smartstock.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 
 /**
@@ -19,6 +20,7 @@ public class Usuario {
     private String nombre;
     private String apellido;
     private String correo;
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY) // nunca se envia al cliente
     private String passwordHash;
 
     @ManyToOne
@@ -40,4 +42,6 @@ public class Usuario {
     public void setRol(Rol rol) { this.rol = rol; }
     public Boolean getEstado() { return estado; }
     public void setEstado(Boolean estado) { this.estado = estado; }
+    public String getPasswordHash() { return passwordHash; }
+    public void setPasswordHash(String passwordHash) { this.passwordHash = passwordHash; }
 }

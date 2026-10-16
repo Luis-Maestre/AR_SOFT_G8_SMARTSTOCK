@@ -29,4 +29,8 @@ public class Lote {
     public void setCantidad(Integer cantidad) { this.cantidad = cantidad; }
     public Producto getProducto() { return producto; }
     public void setProducto(Producto producto) { this.producto = producto; }
+    public String getNumeroLote() { return numeroLote; }
+    public void setNumeroLote(String numeroLote) { this.numeroLote = numeroLote; }
+    public LocalDate getFechaIngreso() { return fechaIngreso; }
+    public void setFechaIngreso(LocalDate fechaIngreso) { this.fechaIngreso = fechaIngreso; }
 }

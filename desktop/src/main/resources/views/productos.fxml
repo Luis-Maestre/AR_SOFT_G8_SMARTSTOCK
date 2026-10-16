@@ -23,6 +23,15 @@
                     <TableColumn fx:id="colStockMinimo" text="Stock mínimo" prefWidth="120"/>
                 </columns>
             </TableView>
+            <Label text="Lotes por vencer (FEFO: el primero de la lista sale primero)" styleClass="titulo"/>
+            <TableView fx:id="tablaLotes" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="colLoteProducto" text="Producto" prefWidth="320"/>
+                    <TableColumn fx:id="colLoteNumero" text="Lote" prefWidth="140"/>
+                    <TableColumn fx:id="colLoteVence" text="Vence" prefWidth="160"/>
+                    <TableColumn fx:id="colLoteCantidad" text="Cantidad" prefWidth="120"/>
+                </columns>
+            </TableView>
             <Label fx:id="estado" styleClass="aviso"/>
         </VBox>
     </center>
