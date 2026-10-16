@@ -1,17 +1,8 @@
-# SmartStock ERP - docker-compose (esqueleto Fase 2)
-# Fase 2: solo referencia de como se orquestaran los servicios en Fase 3.
-# No se ejecuta todavia porque el backend no tiene conexion real a BD.
+# La interfaz es una aplicacion de escritorio JavaFX, por eso no hay servicio
 
 version: "3.9"
 
 services:
-  frontend:
-    build: ./frontend
-    ports:
-      - "3000:3000"
-    depends_on:
-      - backend
-
   backend:
     build: ./backend
     ports:

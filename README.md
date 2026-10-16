@@ -1,64 +1,59 @@
 # SmartStock ERP
 
 Sistema de gestión de inventario para droguerías de barrio, con control
-por lote y fecha de vencimiento (política FEFO), alertas automáticas de
-stock mínimo, sugerencias de reposición y módulo de auditoría.
+por lote y fecha de vencimiento (política FEFO), alertas de stock mínimo,
+sugerencias de reposición y registro de auditoría.
 
-Proyecto desarrollado para la asignatura **Arquitectura de Software**,
-Ingeniería de Software, Universidad Manuela Beltrán.
+Proyecto de la asignatura **Arquitectura de Software**, Ingeniería de
+Software, Universidad Manuela Beltrán.
 
-## Trazabilidad del proyecto
+## Etapas del proyecto
 
 ```
 Fase 1: Idea y propuesta inicial
    ↓
-Fase 2: Prototipo estructurado según la arquitectura   ← estado actual
+Fase 2: Prototipo según la arquitectura (etapa actual)
    ↓
-Fases posteriores: implementación funcional
+Fase 3: Funcionalidad completa
 ```
 
-## Arquitectura seleccionada
+## Arquitectura
 
-Monolítica Modular + Arquitectura por Capas:
+Monolito modular con arquitectura por capas:
 
-- **Presentación**: React + TypeScript (prototipado en Fase 2 con
-  HTML/CSS/JS vanilla como aproximación rápida — ver `frontend/README.md`)
-- **Aplicación y Lógica de Negocio**: Java + Spring Boot
-- **Modelos**: entidades JPA compartidas entre los módulos de negocio
-- **Persistencia**: PostgreSQL vía Spring Data JPA
-- **Infraestructura**: Docker + GitHub
+| Capa | Tecnología |
+|---|---|
+| Interfaz de usuario | **JavaFX** (aplicación de escritorio) |
+| Lógica de negocio | Java + Spring Boot |
+| Modelos | Entidades JPA |
+| Datos | PostgreSQL con Spring Data JPA |
+| Infraestructura | Docker + GitHub |
 
-## Estructura del repositorio
+El módulo de reposición inteligente usará Python y se conectará al
+backend más adelante.
+
+## Carpetas del repositorio
 
 ```
 .
-├── frontend/         # Prototipo de interfaz (Fase 2 — funcional con datos de prueba)
-├── backend/          # Esqueleto Spring Boot: entidades, repositorios, controladores REST
+├── desktop/          # Aplicación de escritorio con JavaFX (en construcción)
+├── backend/          # Servidor Spring Boot: entidades, repositorios y API
 ├── docs/
-│   ├── ddl/           # Script SQL del modelo relacional
-│   └── diagramas/      # Diagramas UML y entidad-relación del proyecto
-└── docker-compose.yml # Orquestación de referencia (frontend + backend + PostgreSQL)
+│   ├── ddl/          # Script SQL de la base de datos
+│   ├── diagramas/    # Diagramas del proyecto
+│   └── maqueta-ui/   # Maqueta web de las pantallas (solo referencia de diseño)
+└── docker-compose.yml
 ```
 
-## Estado de cada módulo en esta fase
+## Estado actual
 
-| Módulo | Estado en Fase 2 |
+| Parte | Estado |
 |---|---|
-| `frontend/` | Funcional: 8 pantallas navegables, formularios operativos sobre datos de prueba en memoria |
-| `backend/` | Esqueleto: entidades, repositorios y controladores REST creados, sin lógica de negocio ni conexión a base de datos real |
-| `docs/` | Script DDL documentado; carpeta lista para alojar los diagramas UML sustentados |
-
-## Cómo ejecutar lo que ya funciona
-
-Por ahora solo el frontend es ejecutable de punta a punta:
-
-```bash
-# No requiere instalación
-abrir frontend/index.html en el navegador
-```
-
-El backend (`backend/`) se compilará y conectará a base de datos a
-partir de la Fase 3.
+| `docs/maqueta-ui/` | Listo: maqueta de 8 pantallas, solo como guía de diseño |
+| `desktop/` | En construcción: aplicación JavaFX |
+| `backend/` | Esqueleto: entidades, repositorios y servicios básicos, sin lógica de negocio |
+| `docs/ddl/` | Listo: script SQL con las 11 tablas |
+| `docs/diagramas/` | Pendiente: subir los diagramas de la Fase 1 |
 
 ## Equipo
 
@@ -66,5 +61,4 @@ partir de la Fase 3.
 - Luis Santo Padilla Maestre
 - Tomás Estrada Martínez
 
-Curso: Ingeniería de Software, 5to semestre — Arquitectura de Software
 Profesor: Jamilton Fernando Benavides
