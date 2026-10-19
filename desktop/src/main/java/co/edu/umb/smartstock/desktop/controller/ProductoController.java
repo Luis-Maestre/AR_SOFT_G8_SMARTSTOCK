@@ -1,6 +1,5 @@
 package co.edu.umb.smartstock.desktop.controller;
 
-import co.edu.umb.smartstock.desktop.Navegador;
 import co.edu.umb.smartstock.desktop.model.LoteDto;
 import co.edu.umb.smartstock.desktop.model.ProductoDto;
 import co.edu.umb.smartstock.desktop.service.ApiClient;
@@ -14,7 +13,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-/** Pantalla principal: productos y lotes ordenados por vencimiento (FEFO). */
+/** Pantalla Productos: productos y lotes ordenados por vencimiento (FEFO). */
 public class ProductoController {
 
     @FXML private TableView<ProductoDto> tablaProductos;
@@ -69,11 +68,6 @@ public class ProductoController {
                 estado.setText("Datos cargados del servidor.");
             }
         }));
-    }
-
-    @FXML
-    private void cerrarSesion() {
-        Navegador.irA("login");
     }
 
     private record Datos(List<ProductoDto> productos, List<LoteDto> lotes) { }

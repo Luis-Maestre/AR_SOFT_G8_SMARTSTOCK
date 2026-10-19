@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="co.edu.umb.smartstock.desktop.controller.DashboardController"
+      spacing="12" styleClass="contenido">
+    <Label text="Dashboard" styleClass="titulo"/>
+    <Label text="Resumen general del inventario de la droguería" styleClass="subtitulo"/>
+    <HBox fx:id="tarjetas" spacing="14"/>
+    <Label text="Alertas activas (stock mínimo)" styleClass="subtitulo-seccion"/>
+    <ListView fx:id="listaAlertas" prefHeight="130"/>
+    <Label text="Últimos movimientos" styleClass="subtitulo-seccion"/>
+    <ListView fx:id="listaMovimientos" VBox.vgrow="ALWAYS"/>
+</VBox>

@@ -16,7 +16,7 @@ public class Navegador {
     public static void irA(String pantalla) {
         try {
             Parent raiz = FXMLLoader.load(Navegador.class.getResource("/views/" + pantalla + ".fxml"));
-            Scene escena = new Scene(raiz, 960, 600);
+            Scene escena = new Scene(raiz, 1100, 680);
             escena.getStylesheets().add(Navegador.class.getResource("/css/estilos.css").toExternalForm());
             ventana.setScene(escena);
         } catch (Exception e) {

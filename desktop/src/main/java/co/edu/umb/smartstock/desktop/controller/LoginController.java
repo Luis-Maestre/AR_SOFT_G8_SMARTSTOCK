@@ -19,6 +19,6 @@ public class LoginController {
             return;
         }
         // Fase 2: modo demostracion, acepta cualquier dato.
-        Navegador.irA("productos");
+        Navegador.irA("principal");
     }
 }

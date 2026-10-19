@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<!-- Marco de la aplicación: el menú lateral se agrega desde PrincipalController -->
+<BorderPane fx:id="marco" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="co.edu.umb.smartstock.desktop.controller.PrincipalController">
+    <top>
+        <HBox spacing="12" alignment="CENTER_LEFT" styleClass="barra">
+            <Label text="SmartStock ERP" styleClass="titulo-barra"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label text="Sesión: modo demostración" styleClass="texto-barra"/>
+            <Button text="Cerrar sesión" onAction="#cerrarSesion"/>
+        </HBox>
+    </top>
+</BorderPane>

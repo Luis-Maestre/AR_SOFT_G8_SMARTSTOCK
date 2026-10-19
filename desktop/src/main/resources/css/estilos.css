@@ -8,3 +8,22 @@
 .barra { -fx-background-color: #0E3B43; -fx-padding: 12 20; }
 .titulo-barra { -fx-text-fill: white; -fx-font-size: 18px; -fx-font-weight: bold; }
 .contenido { -fx-padding: 20; }
+.texto-barra { -fx-text-fill: #CFE3E6; }
+.subtitulo-seccion { -fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #0E3B43; }
+
+/* Menú lateral */
+.menu { -fx-background-color: #0B2E34; -fx-padding: 12 8; }
+.menu-boton { -fx-background-color: transparent; -fx-text-fill: white; -fx-alignment: CENTER_LEFT; -fx-padding: 10 14; -fx-cursor: hand; }
+.menu-boton:hover { -fx-background-color: #145860; }
+.menu-boton.activo { -fx-background-color: #0E6E7A; -fx-font-weight: bold; }
+
+/* Tarjetas de indicadores */
+.tarjeta-indicador { -fx-background-color: white; -fx-border-color: #D5DEE0; -fx-border-radius: 8; -fx-background-radius: 8; -fx-padding: 16; -fx-min-width: 190; }
+.indicador-valor { -fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #0E3B43; }
+.indicador-titulo { -fx-text-fill: #5B6B6E; }
+.tarjeta-alerta .indicador-valor { -fx-text-fill: #B3261E; }
+
+/* Formularios y mensajes */
+.formulario { -fx-background-color: #F3F7F8; -fx-padding: 12; -fx-background-radius: 8; }
+.error { -fx-text-fill: #B3261E; }
+.exito { -fx-text-fill: #1B7F3B; }

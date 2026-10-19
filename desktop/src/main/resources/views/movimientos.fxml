@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="co.edu.umb.smartstock.desktop.controller.MovimientoController"
+      spacing="10" styleClass="contenido">
+    <Label text="Movimientos de inventario" styleClass="titulo"/>
+    <Label text="Registra entradas, salidas y ajustes. La existencia se actualiza sola." styleClass="subtitulo"/>
+
+    <HBox spacing="10" alignment="BOTTOM_LEFT" styleClass="formulario">
+        <VBox spacing="4">
+            <Label text="Producto"/>
+            <ComboBox fx:id="comboProducto" prefWidth="210"/>
+        </VBox>
+        <VBox spacing="4">
+            <Label text="Tipo"/>
+            <ComboBox fx:id="comboTipo" prefWidth="120"/>
+        </VBox>
+        <VBox spacing="4">
+            <Label text="Cantidad"/>
+            <TextField fx:id="campoCantidad" prefWidth="90"/>
+        </VBox>
+        <VBox spacing="4" HBox.hgrow="ALWAYS">
+            <Label text="Motivo"/>
+            <TextField fx:id="campoMotivo" promptText="Venta, compra, conteo..."/>
+        </VBox>
+        <Button text="Registrar" onAction="#registrar" styleClass="boton"/>
+    </HBox>
+    <Label fx:id="mensaje"/>
+
+    <TableView fx:id="tabla" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colFecha" text="Fecha" prefWidth="110"/>
+            <TableColumn fx:id="colProducto" text="Producto" prefWidth="230"/>
+            <TableColumn fx:id="colTipo" text="Tipo" prefWidth="90"/>
+            <TableColumn fx:id="colCantidad" text="Cantidad" prefWidth="90"/>
+            <TableColumn fx:id="colMotivo" text="Motivo" prefWidth="200"/>
+            <TableColumn fx:id="colUsuario" text="Responsable" prefWidth="120"/>
+        </columns>
+    </TableView>
+</VBox>

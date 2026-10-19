@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="co.edu.umb.smartstock.desktop.controller.ReposicionController"
+      spacing="10" styleClass="contenido">
+    <Label text="Reposiciones" styleClass="titulo"/>
+    <Label text="Sugerencias de compra. Revisa, ajusta la cantidad y confirma o rechaza." styleClass="subtitulo"/>
+
+    <TableView fx:id="tabla" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colProducto" text="Producto" prefWidth="240"/>
+            <TableColumn fx:id="colProveedor" text="Proveedor" prefWidth="200"/>
+            <TableColumn fx:id="colSugerida" text="Cant. sugerida" prefWidth="120"/>
+            <TableColumn fx:id="colSolicitada" text="Cant. solicitada" prefWidth="130"/>
+            <TableColumn fx:id="colEstado" text="Estado" prefWidth="110"/>
+        </columns>
+    </TableView>
+
+    <HBox spacing="10" alignment="CENTER_LEFT" styleClass="formulario">
+        <Label text="Cantidad a solicitar (opcional):"/>
+        <TextField fx:id="campoCantidad" prefWidth="90"/>
+        <Button text="Confirmar" onAction="#confirmar" styleClass="boton"/>
+        <Button text="Rechazar" onAction="#rechazar"/>
+    </HBox>
+    <Label fx:id="mensaje"/>
+</VBox>

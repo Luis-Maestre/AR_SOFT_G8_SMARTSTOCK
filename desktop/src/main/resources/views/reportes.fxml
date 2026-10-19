@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="co.edu.umb.smartstock.desktop.controller.ReporteController"
+      spacing="10" styleClass="contenido">
+    <Label text="Reportes" styleClass="titulo"/>
+    <Label text="Elige un reporte para ver el resumen" styleClass="subtitulo"/>
+    <HBox spacing="10" alignment="CENTER_LEFT" styleClass="formulario">
+        <Label text="Reporte:"/>
+        <ComboBox fx:id="comboReporte" prefWidth="300"/>
+    </HBox>
+    <TableView fx:id="tabla" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="col1" prefWidth="260"/>
+            <TableColumn fx:id="col2" prefWidth="200"/>
+            <TableColumn fx:id="col3" prefWidth="200"/>
+        </columns>
+    </TableView>
+</VBox>

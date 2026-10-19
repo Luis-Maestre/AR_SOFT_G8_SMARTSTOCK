@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="co.edu.umb.smartstock.desktop.controller.InventarioController"
+      spacing="10" styleClass="contenido">
+    <Label text="Inventario" styleClass="titulo"/>
+    <Label text="Cantidad actual y ubicación de cada producto" styleClass="subtitulo"/>
+    <TextField fx:id="buscar" promptText="Buscar por código o nombre..." maxWidth="320"/>
+    <TableView fx:id="tabla" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colCodigo" text="Código" prefWidth="100"/>
+            <TableColumn fx:id="colProducto" text="Producto" prefWidth="250"/>
+            <TableColumn fx:id="colCategoria" text="Categoría" prefWidth="160"/>
+            <TableColumn fx:id="colCantidad" text="Cantidad" prefWidth="90"/>
+            <TableColumn fx:id="colMinimo" text="Stock mínimo" prefWidth="110"/>
+            <TableColumn fx:id="colUbicacion" text="Ubicación" prefWidth="120"/>
+            <TableColumn fx:id="colEstado" text="Estado" prefWidth="90"/>
+        </columns>
+    </TableView>
+</VBox>

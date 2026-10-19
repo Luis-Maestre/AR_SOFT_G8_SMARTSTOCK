@@ -2,37 +2,31 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
-            fx:controller="co.edu.umb.smartstock.desktop.controller.ProductoController">
-    <top>
-        <HBox spacing="12" alignment="CENTER_LEFT" styleClass="barra">
-            <Label text="SmartStock ERP" styleClass="titulo-barra"/>
-            <Region HBox.hgrow="ALWAYS"/>
-            <Button text="Actualizar" onAction="#cargar"/>
-            <Button text="Cerrar sesión" onAction="#cerrarSesion"/>
-        </HBox>
-    </top>
-    <center>
-        <VBox spacing="10" styleClass="contenido">
-            <Label text="Productos" styleClass="titulo"/>
-            <TableView fx:id="tablaProductos" VBox.vgrow="ALWAYS">
-                <columns>
-                    <TableColumn fx:id="colCodigo" text="Código" prefWidth="120"/>
-                    <TableColumn fx:id="colNombre" text="Nombre" prefWidth="320"/>
-                    <TableColumn fx:id="colCategoria" text="Categoría" prefWidth="220"/>
-                    <TableColumn fx:id="colStockMinimo" text="Stock mínimo" prefWidth="120"/>
-                </columns>
-            </TableView>
-            <Label text="Lotes por vencer (FEFO: el primero de la lista sale primero)" styleClass="titulo"/>
-            <TableView fx:id="tablaLotes" VBox.vgrow="ALWAYS">
-                <columns>
-                    <TableColumn fx:id="colLoteProducto" text="Producto" prefWidth="320"/>
-                    <TableColumn fx:id="colLoteNumero" text="Lote" prefWidth="140"/>
-                    <TableColumn fx:id="colLoteVence" text="Vence" prefWidth="160"/>
-                    <TableColumn fx:id="colLoteCantidad" text="Cantidad" prefWidth="120"/>
-                </columns>
-            </TableView>
-            <Label fx:id="estado" styleClass="aviso"/>
-        </VBox>
-    </center>
-</BorderPane>
+<!-- Contenido de Productos (el marco, la barra y el menú los pone principal.fxml) -->
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="co.edu.umb.smartstock.desktop.controller.ProductoController"
+      spacing="10" styleClass="contenido">
+    <HBox alignment="CENTER_LEFT" spacing="12">
+        <Label text="Productos" styleClass="titulo"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Button text="Actualizar" onAction="#cargar"/>
+    </HBox>
+    <TableView fx:id="tablaProductos" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colCodigo" text="Código" prefWidth="120"/>
+            <TableColumn fx:id="colNombre" text="Nombre" prefWidth="320"/>
+            <TableColumn fx:id="colCategoria" text="Categoría" prefWidth="220"/>
+            <TableColumn fx:id="colStockMinimo" text="Stock mínimo" prefWidth="120"/>
+        </columns>
+    </TableView>
+    <Label text="Lotes por vencer (FEFO: el primero de la lista sale primero)" styleClass="titulo"/>
+    <TableView fx:id="tablaLotes" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colLoteProducto" text="Producto" prefWidth="320"/>
+            <TableColumn fx:id="colLoteNumero" text="Lote" prefWidth="140"/>
+            <TableColumn fx:id="colLoteVence" text="Vence" prefWidth="160"/>
+            <TableColumn fx:id="colLoteCantidad" text="Cantidad" prefWidth="120"/>
+        </columns>
+    </TableView>
+    <Label fx:id="estado" styleClass="aviso"/>
+</VBox>

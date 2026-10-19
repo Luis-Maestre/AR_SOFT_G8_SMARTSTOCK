@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="co.edu.umb.smartstock.desktop.controller.UsuarioController"
+      spacing="10" styleClass="contenido">
+    <Label text="Usuarios y roles" styleClass="titulo"/>
+    <Label text="Crea usuarios, asígnales un rol y actívalos o inactívalos." styleClass="subtitulo"/>
+
+    <HBox spacing="10" alignment="BOTTOM_LEFT" styleClass="formulario">
+        <VBox spacing="4">
+            <Label text="Nombre"/>
+            <TextField fx:id="campoNombre" prefWidth="190"/>
+        </VBox>
+        <VBox spacing="4">
+            <Label text="Correo"/>
+            <TextField fx:id="campoCorreo" prefWidth="210"/>
+        </VBox>
+        <VBox spacing="4">
+            <Label text="Rol"/>
+            <ComboBox fx:id="comboRol" prefWidth="190"/>
+        </VBox>
+        <Button text="Crear usuario" onAction="#crear" styleClass="boton"/>
+    </HBox>
+    <Label fx:id="mensaje"/>
+
+    <TableView fx:id="tabla" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colNombre" text="Nombre" prefWidth="220"/>
+            <TableColumn fx:id="colCorreo" text="Correo" prefWidth="240"/>
+            <TableColumn fx:id="colRol" text="Rol" prefWidth="200"/>
+            <TableColumn fx:id="colEstado" text="Estado" prefWidth="100"/>
+        </columns>
+    </TableView>
+    <HBox spacing="10">
+        <Button text="Activar / Inactivar seleccionado" onAction="#cambiarEstado"/>
+    </HBox>
+</VBox>
