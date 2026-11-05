@@ -1,0 +1,17 @@
+# Compilacion
+/backend/target/
+/desktop/target/
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+
+# Secretos: nunca subir
+.env
+*.env.local
+
+# IDE
+.idea/
+*.iml
+.vscode/
+nbproject/private/
