@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="co.edu.umb.smartstock.desktop.controller.AuditoriaController"
+      spacing="10" styleClass="contenido">
+    <HBox alignment="CENTER_LEFT" spacing="12">
+        <Label text="Auditoría" styleClass="titulo"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Label fx:id="mensaje" styleClass="aviso"/>
+        <Button text="Actualizar" onAction="#cargar"/>
+    </HBox>
+    <Label text="Registro de las acciones de los usuarios: quién hizo qué y cuándo." styleClass="subtitulo"/>
+    <TableView fx:id="tabla" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colFecha" text="Fecha" prefWidth="130"/>
+            <TableColumn fx:id="colUsuario" text="Usuario" prefWidth="170"/>
+            <TableColumn fx:id="colAccion" text="Acción" prefWidth="190"/>
+            <TableColumn fx:id="colTabla" text="Tabla" prefWidth="140"/>
+            <TableColumn fx:id="colDetalle" text="Detalle" prefWidth="380"/>
+        </columns>
+    </TableView>
+</VBox>

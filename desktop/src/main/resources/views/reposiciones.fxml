@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="co.edu.umb.smartstock.desktop.controller.ReposicionController"
+      spacing="10" styleClass="contenido">
+    <Label text="Reposiciones" styleClass="titulo"/>
+    <Label text="Sugerencias de compra según la demanda esperada. Revisa, ajusta la cantidad y confirma o rechaza." styleClass="subtitulo"/>
+
+    <HBox spacing="10" alignment="CENTER_LEFT" styleClass="formulario">
+        <Label text="Mostrar:"/>
+        <ComboBox fx:id="comboFiltro" prefWidth="140"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Button fx:id="botonGenerar" text="Generar sugerencias" onAction="#generar" styleClass="boton"/>
+        <Button text="Actualizar" onAction="#cargar"/>
+    </HBox>
+
+    <TableView fx:id="tabla" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colProducto" text="Producto" prefWidth="220"/>
+            <TableColumn fx:id="colExistencia" text="Existencia" prefWidth="85"/>
+            <TableColumn fx:id="colMinimo" text="Mínimo" prefWidth="70"/>
+            <TableColumn fx:id="colDemanda" text="Demanda esperada" prefWidth="125"/>
+            <TableColumn fx:id="colSugerida" text="Cant. sugerida" prefWidth="100"/>
+            <TableColumn fx:id="colModelo" text="Modelo" prefWidth="140"/>
+            <TableColumn fx:id="colProveedor" text="Proveedor" prefWidth="130"/>
+            <TableColumn fx:id="colSolicitada" text="Solicitada" prefWidth="80"/>
+            <TableColumn fx:id="colEstado" text="Estado" prefWidth="95"/>
+        </columns>
+    </TableView>
+
+    <HBox spacing="10" alignment="CENTER_LEFT" styleClass="formulario">
+        <Label text="Cantidad a solicitar:"/>
+        <TextField fx:id="campoCantidad" prefWidth="80"/>
+        <Label text="Proveedor:"/>
+        <ComboBox fx:id="comboProveedor" prefWidth="190"/>
+        <TextField fx:id="campoNota" promptText="Nota (opcional)" HBox.hgrow="ALWAYS"/>
+        <Button fx:id="botonConfirmar" text="Confirmar" onAction="#confirmar" styleClass="boton"/>
+        <Button fx:id="botonRechazar" text="Rechazar" onAction="#rechazar"/>
+    </HBox>
+    <Label fx:id="mensaje"/>
+</VBox>

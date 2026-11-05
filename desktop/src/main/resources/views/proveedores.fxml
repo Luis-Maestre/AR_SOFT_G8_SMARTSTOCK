@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="co.edu.umb.smartstock.desktop.controller.ProveedorController"
+      spacing="10" styleClass="contenido">
+    <Label text="Proveedores" styleClass="titulo"/>
+    <Label text="A quién se le compra. Se eligen al confirmar una reposición." styleClass="subtitulo"/>
+
+    <HBox spacing="10" alignment="BOTTOM_LEFT" styleClass="formulario">
+        <VBox spacing="4">
+            <Label text="Nombre *"/>
+            <TextField fx:id="campoNombre" prefWidth="220"/>
+        </VBox>
+        <VBox spacing="4">
+            <Label text="Teléfono"/>
+            <TextField fx:id="campoTelefono" prefWidth="140"/>
+        </VBox>
+        <VBox spacing="4" HBox.hgrow="ALWAYS">
+            <Label text="Correo"/>
+            <TextField fx:id="campoCorreo"/>
+        </VBox>
+        <CheckBox fx:id="checkActivo" text="Activo" selected="true"/>
+        <Button text="Nuevo" onAction="#nuevo"/>
+        <Button fx:id="botonGuardar" text="Guardar" onAction="#guardar" styleClass="boton"/>
+        <Button fx:id="botonDesactivar" text="Desactivar" onAction="#desactivar"/>
+    </HBox>
+    <Label fx:id="mensaje"/>
+
+    <TableView fx:id="tabla" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colNombre" text="Nombre" prefWidth="260"/>
+            <TableColumn fx:id="colTelefono" text="Teléfono" prefWidth="150"/>
+            <TableColumn fx:id="colCorreo" text="Correo" prefWidth="260"/>
+            <TableColumn fx:id="colEstado" text="Estado" prefWidth="90"/>
+        </columns>
+    </TableView>
+</VBox>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="co.edu.umb.smartstock.desktop.controller.CategoriaController"
+      spacing="10" styleClass="contenido">
+    <Label text="Categorías" styleClass="titulo"/>
+    <Label text="Agrupan los productos. Selecciona una fila para editarla." styleClass="subtitulo"/>
+
+    <HBox spacing="10" alignment="BOTTOM_LEFT" styleClass="formulario">
+        <VBox spacing="4">
+            <Label text="Nombre *"/>
+            <TextField fx:id="campoNombre" prefWidth="200"/>
+        </VBox>
+        <VBox spacing="4" HBox.hgrow="ALWAYS">
+            <Label text="Descripción"/>
+            <TextField fx:id="campoDescripcion"/>
+        </VBox>
+        <CheckBox fx:id="checkActiva" text="Activa" selected="true"/>
+        <Button text="Nueva" onAction="#nueva"/>
+        <Button fx:id="botonGuardar" text="Guardar" onAction="#guardar" styleClass="boton"/>
+        <Button fx:id="botonDesactivar" text="Desactivar" onAction="#desactivar"/>
+    </HBox>
+    <Label fx:id="mensaje"/>
+
+    <TableView fx:id="tabla" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colNombre" text="Nombre" prefWidth="240"/>
+            <TableColumn fx:id="colDescripcion" text="Descripción" prefWidth="420"/>
+            <TableColumn fx:id="colEstado" text="Estado" prefWidth="100"/>
+        </columns>
+    </TableView>
+</VBox>

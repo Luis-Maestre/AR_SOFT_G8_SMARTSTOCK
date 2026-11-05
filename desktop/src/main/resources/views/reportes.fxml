@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="co.edu.umb.smartstock.desktop.controller.ReporteController"
+      spacing="10" styleClass="contenido">
+    <Label text="Reportes" styleClass="titulo"/>
+    <Label text="Consulta el inventario valorizado y los movimientos. Puedes exportarlos a CSV para abrirlos en Excel." styleClass="subtitulo"/>
+    <Label fx:id="mensaje" styleClass="aviso"/>
+    <TabPane VBox.vgrow="ALWAYS" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+            <Tab text="Inventario valorizado">
+                <VBox spacing="10" styleClass="contenido">
+                    <HBox spacing="10" alignment="CENTER_LEFT" styleClass="formulario">
+                        <Label fx:id="totalInventario" styleClass="subtitulo-seccion"/>
+                        <Region HBox.hgrow="ALWAYS"/>
+                        <Button text="Actualizar" onAction="#cargarInventario"/>
+                        <Button text="Exportar CSV" onAction="#exportarInventario" styleClass="boton"/>
+                    </HBox>
+                    <TableView fx:id="tablaInventario" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn fx:id="iCodigo" text="Código" prefWidth="100"/>
+                            <TableColumn fx:id="iProducto" text="Producto" prefWidth="260"/>
+                            <TableColumn fx:id="iCategoria" text="Categoría" prefWidth="150"/>
+                            <TableColumn fx:id="iCantidad" text="Existencia" prefWidth="90"/>
+                            <TableColumn fx:id="iMinimo" text="Mínimo" prefWidth="80"/>
+                            <TableColumn fx:id="iNivel" text="Nivel" prefWidth="100"/>
+                            <TableColumn fx:id="iValor" text="Valor" prefWidth="120"/>
+                        </columns>
+                    </TableView>
+                </VBox>
+            </Tab>
+            <Tab text="Movimientos">
+                <VBox spacing="10" styleClass="contenido">
+                    <HBox spacing="10" alignment="CENTER_LEFT" styleClass="formulario">
+                        <Label text="Desde:"/>
+                        <DatePicker fx:id="fechaDesde"/>
+                        <Label text="Hasta:"/>
+                        <DatePicker fx:id="fechaHasta"/>
+                        <Button text="Consultar" onAction="#cargarMovimientos"/>
+                        <Region HBox.hgrow="ALWAYS"/>
+                        <Button text="Exportar CSV" onAction="#exportarMovimientos" styleClass="boton"/>
+                    </HBox>
+                    <TableView fx:id="tablaMovimientos" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn fx:id="mFecha" text="Fecha" prefWidth="130"/>
+                            <TableColumn fx:id="mProducto" text="Producto" prefWidth="250"/>
+                            <TableColumn fx:id="mTipo" text="Tipo" prefWidth="80"/>
+                            <TableColumn fx:id="mCantidad" text="Cantidad" prefWidth="80"/>
+                            <TableColumn fx:id="mMotivo" text="Motivo" prefWidth="200"/>
+                            <TableColumn fx:id="mUsuario" text="Responsable" prefWidth="150"/>
+                        </columns>
+                    </TableView>
+                </VBox>
+            </Tab>
+        </tabs>
+    </TabPane>
+</VBox>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="co.edu.umb.smartstock.desktop.controller.UsuarioController"
+      spacing="10" styleClass="contenido">
+    <Label text="Usuarios y roles" styleClass="titulo"/>
+    <Label text="Crea usuarios y asígnales un rol. Selecciona una fila para editarla (contraseña vacía = no cambia)." styleClass="subtitulo"/>
+
+    <VBox spacing="10" styleClass="formulario">
+        <HBox spacing="10" alignment="BOTTOM_LEFT">
+            <VBox spacing="4">
+                <Label text="Nombre *"/>
+                <TextField fx:id="campoNombre" prefWidth="170"/>
+            </VBox>
+            <VBox spacing="4">
+                <Label text="Apellido"/>
+                <TextField fx:id="campoApellido" prefWidth="170"/>
+            </VBox>
+            <VBox spacing="4">
+                <Label text="Correo *"/>
+                <TextField fx:id="campoCorreo" prefWidth="220"/>
+            </VBox>
+            <VBox spacing="4">
+                <Label text="Contraseña"/>
+                <PasswordField fx:id="campoClave" prefWidth="160"/>
+            </VBox>
+            <VBox spacing="4">
+                <Label text="Rol *"/>
+                <ComboBox fx:id="comboRol" prefWidth="170"/>
+            </VBox>
+        </HBox>
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <CheckBox fx:id="checkActivo" text="Activo" selected="true"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button text="Nuevo" onAction="#nuevo"/>
+            <Button text="Guardar" onAction="#guardar" styleClass="boton"/>
+            <Button fx:id="botonDesactivar" text="Desactivar" onAction="#desactivar"/>
+        </HBox>
+    </VBox>
+    <Label fx:id="mensaje"/>
+
+    <TableView fx:id="tabla" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colNombre" text="Nombre" prefWidth="230"/>
+            <TableColumn fx:id="colCorreo" text="Correo" prefWidth="260"/>
+            <TableColumn fx:id="colRol" text="Rol" prefWidth="200"/>
+            <TableColumn fx:id="colEstado" text="Estado" prefWidth="100"/>
+        </columns>
+    </TableView>
+</VBox>

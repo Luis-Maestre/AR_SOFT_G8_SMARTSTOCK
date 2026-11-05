@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<!-- Contenido de Productos (el marco, la barra y el menú los pone principal.fxml) -->
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="co.edu.umb.smartstock.desktop.controller.ProductoController"
+      spacing="10" styleClass="contenido">
+    <HBox alignment="CENTER_LEFT" spacing="12">
+        <Label text="Productos" styleClass="titulo"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Label fx:id="estado" styleClass="aviso"/>
+    </HBox>
+    <HBox spacing="10" alignment="CENTER_LEFT" styleClass="formulario">
+        <TextField fx:id="campoBuscar" promptText="Buscar por nombre o código" prefWidth="260"/>
+        <Button text="Buscar" onAction="#cargar"/>
+        <CheckBox fx:id="checkInactivos" text="Mostrar inactivos" onAction="#cargar"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Button fx:id="botonNuevo" text="Nuevo producto" onAction="#nuevo" styleClass="boton"/>
+        <Button fx:id="botonEditar" text="Editar" onAction="#editar"/>
+        <Button fx:id="botonEstado" text="Desactivar" onAction="#cambiarEstado"/>
+    </HBox>
+    <TableView fx:id="tablaProductos" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colCodigo" text="Código" prefWidth="100"/>
+            <TableColumn fx:id="colNombre" text="Nombre" prefWidth="250"/>
+            <TableColumn fx:id="colCategoria" text="Categoría" prefWidth="150"/>
+            <TableColumn fx:id="colPrecio" text="Precio" prefWidth="90"/>
+            <TableColumn fx:id="colExistencia" text="Existencia" prefWidth="90"/>
+            <TableColumn fx:id="colStockMinimo" text="Stock mín." prefWidth="90"/>
+            <TableColumn fx:id="colUbicacion" text="Ubicación" prefWidth="120"/>
+            <TableColumn fx:id="colEstado" text="Estado" prefWidth="80"/>
+        </columns>
+    </TableView>
+    <Label text="En rojo: productos con existencia igual o menor al stock mínimo." styleClass="aviso"/>
+</VBox>
