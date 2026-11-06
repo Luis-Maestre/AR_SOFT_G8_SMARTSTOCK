@@ -1,8 +1,8 @@
-# SmartStock ERP 📦
+# SmartStock ERP
 
 Sistema integral de planificación de recursos empresariales (ERP) para la gestión de inventario, con arquitectura dividida en tres componentes: un backend en Spring Boot, una API de predicción en Python y un cliente de escritorio en JavaFX.
 
-## 📋 Requisitos Previos
+## Requisitos Previos
 
 Asegúrate de tener instalado lo siguiente antes de levantar el entorno:
 - [Java Development Kit (JDK)](https://adoptium.net/) (Compatible con tu versión de Maven/JavaFX)
@@ -12,7 +12,7 @@ Asegúrate de tener instalado lo siguiente antes de levantar el entorno:
 
 ---
 
-## ⚙️ Configuración del Entorno
+## Configuración del Entorno
 
 ### 1. Base de Datos (Supabase)
 El proyecto utiliza Supabase como motor de base de datos relacional. Para inicializar las tablas:
@@ -26,7 +26,7 @@ Asegúrate de incluir las credenciales de tu base de datos de Supabase, tu `JWT_
 
 ---
 
-## 🚀 Ejecución del Proyecto
+## Ejecución del Proyecto
 
 El sistema requiere que los tres servicios estén corriendo en paralelo. Abre tres terminales distintas y ejecuta los siguientes comandos:
 
@@ -62,7 +62,7 @@ mvn javafx:run
 
 ---
 
-## 🧪 Pruebas y Uso de la App
+## Pruebas y Uso de la App
 
 Una vez que la aplicación de escritorio esté corriendo, puedes iniciar sesión con las credenciales que definiste en tus variables de entorno (`ADMIN_EMAIL` / `ADMIN_PASSWORD`). 
 
