@@ -2,6 +2,7 @@ package co.edu.umb.smartstock.model;
 
 import jakarta.persistence.*;
 
+<<<<<<< HEAD
 @Entity
 @Table(name = "rol")
 public class Rol {
@@ -27,6 +28,20 @@ public class Rol {
         this.descripcion = descripcion;
     }
 
+=======
+/** Entidad Rol — catalogo de roles de usuario (administrador, encargado_inventario, usuario). */
+@Entity
+@Table(name = "rol")
+public class Rol {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long idRol;
+
+    private String nombre;
+    private String descripcion;
+
+>>>>>>> d73906b8395de950b3b26a93762371c581175868
     public Long getIdRol() { return idRol; }
     public void setIdRol(Long idRol) { this.idRol = idRol; }
     public String getNombre() { return nombre; }

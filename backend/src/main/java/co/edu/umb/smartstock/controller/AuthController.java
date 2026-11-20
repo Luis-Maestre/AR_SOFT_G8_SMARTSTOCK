@@ -1,5 +1,6 @@
 package co.edu.umb.smartstock.controller;
 
+<<<<<<< HEAD
 import co.edu.umb.smartstock.config.UsuarioActual;
 import co.edu.umb.smartstock.dto.Dtos.*;
 import co.edu.umb.smartstock.service.AuthService;
@@ -32,5 +33,22 @@ public class AuthController {
                                                 @Valid @RequestBody CambiarPasswordRequest req) {
         auth.cambiarPassword(u.id(), req);
         return ResponseEntity.noContent().build();
+=======
+import org.springframework.web.bind.annotation.*;
+
+/**
+ * AuthController — capa Controlador.
+ * Gestiona el inicio de sesion y autenticacion de usuarios.
+ * Fase 2: esqueleto sin logica real (sin JWT/Spring Security todavia).
+ */
+@RestController
+@RequestMapping("/api/auth")
+public class AuthController {
+
+    @PostMapping("/login")
+    public String login(@RequestBody Object credenciales) {
+        // TODO Fase 3: validar credenciales contra UsuarioRepository y emitir token JWT.
+        return "Endpoint de autenticacion — pendiente de implementar en Fase 3";
+>>>>>>> d73906b8395de950b3b26a93762371c581175868
     }
 }

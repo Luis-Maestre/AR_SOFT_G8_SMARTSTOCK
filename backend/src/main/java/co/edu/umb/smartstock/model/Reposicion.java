@@ -3,6 +3,7 @@ package co.edu.umb.smartstock.model;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
+<<<<<<< HEAD
 @Entity
 @Table(name = "reposicion")
 public class Reposicion {
@@ -39,6 +40,24 @@ public class Reposicion {
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "id_producto", nullable = false)
+=======
+/** Entidad Reposicion — sugerencias y solicitudes de reabastecimiento. */
+@Entity
+@Table(name = "reposicion")
+public class Reposicion {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long idReposicion;
+
+    private Integer cantidadSugerida;
+    private Integer cantidadSolicitada;
+    private LocalDateTime fecha;
+    private String estado; // sugerida | confirmada | rechazada
+
+    @ManyToOne
+    @JoinColumn(name = "id_producto")
+>>>>>>> d73906b8395de950b3b26a93762371c581175868
     private Producto producto;
 
     @ManyToOne
@@ -47,12 +66,18 @@ public class Reposicion {
 
     public Long getIdReposicion() { return idReposicion; }
     public void setIdReposicion(Long idReposicion) { this.idReposicion = idReposicion; }
+<<<<<<< HEAD
+=======
+    public String getEstado() { return estado; }
+    public void setEstado(String estado) { this.estado = estado; }
+>>>>>>> d73906b8395de950b3b26a93762371c581175868
     public Integer getCantidadSugerida() { return cantidadSugerida; }
     public void setCantidadSugerida(Integer cantidadSugerida) { this.cantidadSugerida = cantidadSugerida; }
     public Integer getCantidadSolicitada() { return cantidadSolicitada; }
     public void setCantidadSolicitada(Integer cantidadSolicitada) { this.cantidadSolicitada = cantidadSolicitada; }
     public LocalDateTime getFecha() { return fecha; }
     public void setFecha(LocalDateTime fecha) { this.fecha = fecha; }
+<<<<<<< HEAD
     public String getEstado() { return estado; }
     public void setEstado(String estado) { this.estado = estado; }
     public String getModeloPrediccion() { return modeloPrediccion; }
@@ -61,6 +86,8 @@ public class Reposicion {
     public void setDemandaEstimada(Double demandaEstimada) { this.demandaEstimada = demandaEstimada; }
     public String getNota() { return nota; }
     public void setNota(String nota) { this.nota = nota; }
+=======
+>>>>>>> d73906b8395de950b3b26a93762371c581175868
     public Producto getProducto() { return producto; }
     public void setProducto(Producto producto) { this.producto = producto; }
     public Proveedor getProveedor() { return proveedor; }

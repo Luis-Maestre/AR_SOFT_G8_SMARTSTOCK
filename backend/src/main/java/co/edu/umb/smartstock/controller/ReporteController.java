@@ -1,5 +1,6 @@
 package co.edu.umb.smartstock.controller;
 
+<<<<<<< HEAD
 import co.edu.umb.smartstock.dto.Dtos.DashboardDto;
 import co.edu.umb.smartstock.service.ReporteService;
 import java.time.LocalDate;
@@ -41,5 +42,21 @@ public class ReporteController {
                 .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + nombre + "\"")
                 .contentType(CSV)
                 .body(datos);
+=======
+import org.springframework.web.bind.annotation.*;
+
+/**
+ * ReporteController — capa Controlador.
+ * Procesa la informacion necesaria para generar reportes consolidados.
+ */
+@RestController
+@RequestMapping("/api/reportes")
+public class ReporteController {
+
+    @GetMapping("/resumen")
+    public String resumen() {
+        // TODO Fase 3: agregar totales de productos, inventario, alertas y movimientos.
+        return "Endpoint de reportes — pendiente de implementar en Fase 3";
+>>>>>>> d73906b8395de950b3b26a93762371c581175868
     }
 }

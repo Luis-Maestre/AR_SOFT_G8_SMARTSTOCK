@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SmartStock ERP — Productos</title>
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+<div class="app-shell">
+  <aside class="sidebar">
+    <div class="brand"><span class="mark">SmartStock</span><span class="tag">ERP</span></div>
+    <nav>
+      <a href="dashboard.html"><span class="icon">◆</span> Dashboard</a>
+      <a href="productos.html"><span class="icon">▣</span> Productos</a>
+      <a href="inventario.html"><span class="icon">▤</span> Inventario</a>
+      <a href="movimientos.html"><span class="icon">↕</span> Movimientos</a>
+      <a href="reposiciones.html"><span class="icon">↻</span> Reposiciones</a>
+      <a href="reportes.html"><span class="icon">▦</span> Reportes</a>
+      <a href="usuarios.html"><span class="icon">◐</span> Usuarios</a>
+    </nav>
+    <div class="sidebar-foot">SmartStock ERP · Fase 2<br>Prototipo estructurado</div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <input class="search" type="text" placeholder="Buscar producto, lote o movimiento...">
+      <div class="user"><span id="user-label">Cargando...</span><div class="avatar" id="user-avatar">?</div></div>
+    </header>
+
+    <main class="content">
+      <div class="content-header">
+        <div>
+          <h1>Productos</h1>
+          <p class="mt-0 text-muted">Catálogo de medicamentos administrados por la droguería</p>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>Registrar nuevo producto</h2>
+        <form id="form-producto" class="form-grid">
+          <div class="field">
+            <label for="nombre-producto">Nombre del medicamento</label>
+            <input type="text" id="nombre-producto" placeholder="Ej. Diclofenaco 50mg x 10" required>
+          </div>
+          <div class="field">
+            <label for="categoria-producto">Categoria</label>
+            <select id="categoria-producto" required>
+              <option value="1">Analgesicos</option>
+              <option value="2">Antibioticos</option>
+              <option value="3">Antigripales</option>
+              <option value="4">Cuidado personal</option>
+              <option value="5">Vitaminas</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="precio-producto">Precio de venta (COP)</label>
+            <input type="number" id="precio-producto" placeholder="8500" min="0" required>
+          </div>
+          <div class="field">
+            <label for="minimo-producto">Stock minimo</label>
+            <input type="number" id="minimo-producto" placeholder="15" min="0" required>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn">Registrar producto</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="panel">
+        <div class="flex-between" style="margin-bottom:14px;">
+          <h2 class="mt-0">Catálogo</h2>
+          <div style="display:flex; gap:10px;">
+            <input type="text" id="buscador-producto" class="search" placeholder="Buscar por nombre..." style="width:220px;">
+            <select id="filtro-categoria" class="search" style="width:180px;">
+              <option value="">Todas las categorias</option>
+            </select>
+          </div>
+        </div>
+        <div id="tabla-productos"></div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<script src="../js/data/mock-data.js"></script>
+<script src="../js/models/producto.js"></script>
+<script src="../js/models/usuario.js"></script>
+<script src="../js/views/render.js"></script>
+<script src="../js/controllers/navController.js"></script>
+<script src="../js/controllers/productoController.js"></script>
+</body>
+</html>

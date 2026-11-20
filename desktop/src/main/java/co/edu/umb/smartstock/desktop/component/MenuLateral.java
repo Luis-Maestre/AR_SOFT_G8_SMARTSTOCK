@@ -1,6 +1,9 @@
 package co.edu.umb.smartstock.desktop.component;
 
+<<<<<<< HEAD
 import co.edu.umb.smartstock.desktop.service.Sesion;
+=======
+>>>>>>> d73906b8395de950b3b26a93762371c581175868
 import java.util.function.Consumer;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
@@ -12,6 +15,7 @@ import javafx.scene.layout.VBox;
  */
 public class MenuLateral extends VBox {
 
+<<<<<<< HEAD
     /** {texto del botón, nombre del archivo .fxml en /views, "admin" si solo lo ve el administrador}. */
     private static final String[][] OPCIONES = {
         {"Dashboard", "dashboard", ""},
@@ -24,6 +28,17 @@ public class MenuLateral extends VBox {
         {"Reportes", "reportes", ""},
         {"Usuarios", "usuarios", "admin"},
         {"Auditoría", "auditoria", "admin"}
+=======
+    /** {texto del botón, nombre del archivo .fxml en /views}. */
+    private static final String[][] OPCIONES = {
+        {"Dashboard", "dashboard"},
+        {"Productos", "productos"},
+        {"Inventario", "inventario"},
+        {"Movimientos", "movimientos"},
+        {"Reposiciones", "reposiciones"},
+        {"Reportes", "reportes"},
+        {"Usuarios", "usuarios"}
+>>>>>>> d73906b8395de950b3b26a93762371c581175868
     };
 
     private final Consumer<String> alElegir;
@@ -35,9 +50,12 @@ public class MenuLateral extends VBox {
         setPrefWidth(190);
 
         for (String[] opcion : OPCIONES) {
+<<<<<<< HEAD
             if ("admin".equals(opcion[2]) && !Sesion.esAdmin()) {
                 continue; // el menú solo muestra lo que el rol puede usar
             }
+=======
+>>>>>>> d73906b8395de950b3b26a93762371c581175868
             Button boton = new Button(opcion[0]);
             boton.setUserData(opcion[1]);
             boton.setMaxWidth(Double.MAX_VALUE);

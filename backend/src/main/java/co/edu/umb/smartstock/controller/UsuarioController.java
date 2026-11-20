@@ -1,5 +1,6 @@
 package co.edu.umb.smartstock.controller;
 
+<<<<<<< HEAD
 import co.edu.umb.smartstock.config.Permisos;
 import co.edu.umb.smartstock.config.UsuarioActual;
 import co.edu.umb.smartstock.dto.Dtos.*;
@@ -47,5 +48,32 @@ public class UsuarioController {
     public ResponseEntity<Void> desactivar(@PathVariable Long id, @AuthenticationPrincipal UsuarioActual u) {
         servicio.desactivar(id, u.id());
         return ResponseEntity.noContent().build();
+=======
+import co.edu.umb.smartstock.model.Usuario;
+import co.edu.umb.smartstock.repository.UsuarioRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+import java.util.List;
+
+/**
+ * UsuarioController — capa Controlador.
+ * Administra usuarios y roles del sistema.
+ */
+@RestController
+@RequestMapping("/api/usuarios")
+public class UsuarioController {
+
+    @Autowired
+    private UsuarioRepository usuarioRepository;
+
+    @GetMapping
+    public List<Usuario> listar() {
+        return usuarioRepository.findAll();
+    }
+
+    @PostMapping
+    public Usuario registrar(@RequestBody Usuario usuario) {
+        return usuarioRepository.save(usuario);
+>>>>>>> d73906b8395de950b3b26a93762371c581175868
     }
 }

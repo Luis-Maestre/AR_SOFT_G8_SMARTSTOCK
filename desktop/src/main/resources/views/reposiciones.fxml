@@ -6,6 +6,7 @@
       fx:controller="co.edu.umb.smartstock.desktop.controller.ReposicionController"
       spacing="10" styleClass="contenido">
     <Label text="Reposiciones" styleClass="titulo"/>
+<<<<<<< HEAD
     <Label text="Sugerencias de compra según la demanda esperada. Revisa, ajusta la cantidad y confirma o rechaza." styleClass="subtitulo"/>
 
     <HBox spacing="10" alignment="CENTER_LEFT" styleClass="formulario">
@@ -27,10 +28,22 @@
             <TableColumn fx:id="colProveedor" text="Proveedor" prefWidth="130"/>
             <TableColumn fx:id="colSolicitada" text="Solicitada" prefWidth="80"/>
             <TableColumn fx:id="colEstado" text="Estado" prefWidth="95"/>
+=======
+    <Label text="Sugerencias de compra. Revisa, ajusta la cantidad y confirma o rechaza." styleClass="subtitulo"/>
+
+    <TableView fx:id="tabla" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colProducto" text="Producto" prefWidth="240"/>
+            <TableColumn fx:id="colProveedor" text="Proveedor" prefWidth="200"/>
+            <TableColumn fx:id="colSugerida" text="Cant. sugerida" prefWidth="120"/>
+            <TableColumn fx:id="colSolicitada" text="Cant. solicitada" prefWidth="130"/>
+            <TableColumn fx:id="colEstado" text="Estado" prefWidth="110"/>
+>>>>>>> d73906b8395de950b3b26a93762371c581175868
         </columns>
     </TableView>
 
     <HBox spacing="10" alignment="CENTER_LEFT" styleClass="formulario">
+<<<<<<< HEAD
         <Label text="Cantidad a solicitar:"/>
         <TextField fx:id="campoCantidad" prefWidth="80"/>
         <Label text="Proveedor:"/>
@@ -38,6 +51,12 @@
         <TextField fx:id="campoNota" promptText="Nota (opcional)" HBox.hgrow="ALWAYS"/>
         <Button fx:id="botonConfirmar" text="Confirmar" onAction="#confirmar" styleClass="boton"/>
         <Button fx:id="botonRechazar" text="Rechazar" onAction="#rechazar"/>
+=======
+        <Label text="Cantidad a solicitar (opcional):"/>
+        <TextField fx:id="campoCantidad" prefWidth="90"/>
+        <Button text="Confirmar" onAction="#confirmar" styleClass="boton"/>
+        <Button text="Rechazar" onAction="#rechazar"/>
+>>>>>>> d73906b8395de950b3b26a93762371c581175868
     </HBox>
     <Label fx:id="mensaje"/>
 </VBox>

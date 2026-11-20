@@ -5,6 +5,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import java.util.Map;
 
+<<<<<<< HEAD
+=======
+/** HealthController — permite comprobar que el servidor esta encendido. */
+>>>>>>> d73906b8395de950b3b26a93762371c581175868
 @RestController
 @RequestMapping("/api/health")
 public class HealthController {

@@ -3,6 +3,7 @@ package co.edu.umb.smartstock.model;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
+<<<<<<< HEAD
 @Entity
 @Table(name = "auditoria")
 public class Auditoria {
@@ -28,6 +29,25 @@ public class Auditoria {
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "id_usuario", nullable = false)
+=======
+/** Entidad Auditoria — trazabilidad de acciones dentro del sistema. */
+@Entity
+@Table(name = "auditoria")
+public class Auditoria {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long idAuditoria;
+
+    private String accion;
+    private String tablaAfectada;
+    private Long registroAfectado;
+    private LocalDateTime fecha;
+    private String descripcion;
+
+    @ManyToOne
+    @JoinColumn(name = "id_usuario")
+>>>>>>> d73906b8395de950b3b26a93762371c581175868
     private Usuario usuario;
 
     public Long getIdAuditoria() { return idAuditoria; }

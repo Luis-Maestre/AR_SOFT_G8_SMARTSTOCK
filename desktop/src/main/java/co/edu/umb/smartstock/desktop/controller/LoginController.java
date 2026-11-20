@@ -1,6 +1,7 @@
 package co.edu.umb.smartstock.desktop.controller;
 
 import co.edu.umb.smartstock.desktop.Navegador;
+<<<<<<< HEAD
 import co.edu.umb.smartstock.desktop.model.Api;
 import co.edu.umb.smartstock.desktop.service.ApiClient;
 import co.edu.umb.smartstock.desktop.service.Sesion;
@@ -10,16 +11,23 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+=======
+import javafx.fxml.FXML;
+>>>>>>> d73906b8395de950b3b26a93762371c581175868
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
+<<<<<<< HEAD
 /** RF01: inicio de sesión real contra el servidor. */
+=======
+>>>>>>> d73906b8395de950b3b26a93762371c581175868
 public class LoginController {
 
     @FXML private TextField correo;
     @FXML private PasswordField clave;
     @FXML private Label mensaje;
+<<<<<<< HEAD
     @FXML private Button botonIngresar;
 
     @FXML
@@ -46,5 +54,16 @@ public class LoginController {
                     botonIngresar.setDisable(false);
                     Avisos.error(mensaje, error);
                 });
+=======
+
+    @FXML
+    private void ingresar() {
+        if (correo.getText().isBlank() || clave.getText().isBlank()) {
+            mensaje.setText("Escribe tu correo y tu contraseña.");
+            return;
+        }
+        // Fase 2: modo demostracion, acepta cualquier dato.
+        Navegador.irA("principal");
+>>>>>>> d73906b8395de950b3b26a93762371c581175868
     }
 }

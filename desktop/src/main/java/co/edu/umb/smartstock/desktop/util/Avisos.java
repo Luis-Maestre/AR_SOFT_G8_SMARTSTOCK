@@ -16,6 +16,7 @@ public final class Avisos {
         etiqueta.getStyleClass().setAll("label", "exito");
         etiqueta.setText(texto);
     }
+<<<<<<< HEAD
 
     public static void info(Label etiqueta, String texto) {
         etiqueta.getStyleClass().setAll("label", "aviso");
@@ -30,4 +31,6 @@ public final class Avisos {
         a.setHeaderText(null);
         return a.showAndWait().filter(b -> b == javafx.scene.control.ButtonType.OK).isPresent();
     }
+=======
+>>>>>>> d73906b8395de950b3b26a93762371c581175868
 }

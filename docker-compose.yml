@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # SmartStock ERP: backend (Spring Boot) + servicio de prediccion (Python).
 # La base de datos es Supabase (nube), no se levanta aqui.
 # La app de escritorio JavaFX se ejecuta fuera de Docker (ver desktop/README.md).
@@ -22,3 +23,30 @@ services:
       - prediccion
     ports:
       - "8080:8080"
+=======
+# La interfaz es una aplicacion de escritorio JavaFX, por eso no hay servicio
+
+version: "3.9"
+
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: smartstock
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: changeme
+    ports:
+      - "5432:5432"
+    volumes:
+      - smartstock_data:/var/lib/postgresql/data
+
+volumes:
+  smartstock_data:
+>>>>>>> d73906b8395de950b3b26a93762371c581175868

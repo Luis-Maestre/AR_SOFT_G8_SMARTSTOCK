@@ -1,5 +1,6 @@
 package co.edu.umb.smartstock.controller;
 
+<<<<<<< HEAD
 import co.edu.umb.smartstock.config.Permisos;
 import co.edu.umb.smartstock.config.UsuarioActual;
 import co.edu.umb.smartstock.dto.Dtos.*;
@@ -58,5 +59,34 @@ public class ProductoController {
     @PreAuthorize(Permisos.GESTION)
     public ProductoDto reactivar(@PathVariable Long id, @AuthenticationPrincipal UsuarioActual u) {
         return servicio.reactivar(id, u.id());
+=======
+import co.edu.umb.smartstock.model.Producto;
+import co.edu.umb.smartstock.repository.ProductoRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+import java.util.List;
+
+/**
+ * ProductoController — capa Controlador.
+ * Administra productos y categorias (equivalente REST del
+ * productoController.js del frontend).
+ */
+@RestController
+@RequestMapping("/api/productos")
+public class ProductoController {
+
+    @Autowired
+    private ProductoRepository productoRepository;
+
+    @GetMapping
+    public List<Producto> listar() {
+        return productoRepository.findAll();
+    }
+
+    @PostMapping
+    public Producto registrar(@RequestBody Producto producto) {
+        // TODO Fase 3: validaciones de negocio antes de guardar.
+        return productoRepository.save(producto);
+>>>>>>> d73906b8395de950b3b26a93762371c581175868
     }
 }

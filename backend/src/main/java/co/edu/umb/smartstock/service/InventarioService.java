@@ -1,5 +1,6 @@
 package co.edu.umb.smartstock.service;
 
+<<<<<<< HEAD
 import co.edu.umb.smartstock.dto.Dtos.*;
 import co.edu.umb.smartstock.exception.ApiException;
 import co.edu.umb.smartstock.model.*;
@@ -178,4 +179,18 @@ public class InventarioService {
         return movimientos.findAll(spec, PageRequest.of(0, n, Sort.by(Sort.Direction.DESC, "fecha", "idMovimiento")))
                 .getContent().stream().map(m -> Mapeador.movimiento(m, null)).toList();
     }
+=======
+import org.springframework.stereotype.Service;
+
+/**
+ * InventarioService — capa de logica de negocio (Modelo).
+ * Fase 2: esqueleto vacio. En Fase 3 contendra la logica de:
+ *  - aplicarFEFO(idProducto): ordenar lotes por fecha_vencimiento
+ *  - verificarStockMinimo(idProducto): generar Alerta si aplica
+ *  - calcularSugerenciaReposicion(idProducto): invocar microservicio Python
+ */
+@Service
+public class InventarioService {
+    // TODO Fase 3
+>>>>>>> d73906b8395de950b3b26a93762371c581175868
 }
