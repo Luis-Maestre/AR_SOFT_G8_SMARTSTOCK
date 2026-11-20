@@ -3,6 +3,38 @@ package co.edu.umb.smartstock.model;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
+<<<<<<< HEAD
+@Entity
+@Table(name = "movimiento_inventario")
+public class MovimientoInventario {
+    public static final String ENTRADA = "entrada";
+    public static final String SALIDA = "salida";
+    public static final String AJUSTE = "ajuste";
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_movimiento")
+    private Long idMovimiento;
+
+    @Column(name = "tipo_movimiento", nullable = false, length = 20)
+    private String tipoMovimiento;
+    
+    @Column(nullable = false)
+    private Integer cantidad;
+
+    @Column(nullable = false)
+    private LocalDateTime fecha;
+
+    @Column(length = 255)
+    private String motivo;
+
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "id_producto", nullable = false)
+    private Producto producto;
+
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "id_usuario", nullable = false)
+=======
 /** Entidad MovimientoInventario — historial de entradas, salidas y ajustes. */
 @Entity
 @Table(name = "movimiento_inventario")
@@ -23,6 +55,7 @@ public class MovimientoInventario {
 
     @ManyToOne
     @JoinColumn(name = "id_usuario")
+>>>>>>> d73906b8395de950b3b26a93762371c581175868
     private Usuario usuario;
 
     public Long getIdMovimiento() { return idMovimiento; }

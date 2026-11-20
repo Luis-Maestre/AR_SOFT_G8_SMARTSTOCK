@@ -1,6 +1,14 @@
 package co.edu.umb.smartstock.repository;
 
 import co.edu.umb.smartstock.model.Proveedor;
+<<<<<<< HEAD
+import java.util.List;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface ProveedorRepository extends JpaRepository<Proveedor, Long> {
+    List<Proveedor> findByEstadoTrueOrderByNombreAsc();
+    List<Proveedor> findAllByOrderByNombreAsc();
+=======
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -11,4 +19,5 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface ProveedorRepository extends JpaRepository<Proveedor, Long> {
+>>>>>>> d73906b8395de950b3b26a93762371c581175868
 }

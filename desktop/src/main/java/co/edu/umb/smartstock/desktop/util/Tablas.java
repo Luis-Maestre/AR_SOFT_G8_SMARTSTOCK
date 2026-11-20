@@ -13,4 +13,18 @@ public final class Tablas {
     public static <T, V> void columna(TableColumn<T, V> columna, Function<T, V> dato) {
         columna.setCellValueFactory(c -> new ReadOnlyObjectWrapper<>(dato.apply(c.getValue())));
     }
+<<<<<<< HEAD
+
+    /** Texto de un numero entero o vacio si es nulo. */
+    public static String num(Number n) {
+        return n == null ? "" : String.valueOf(n);
+    }
+
+    /** Importe con separador de miles, ej. 12.500. */
+    public static String dinero(java.math.BigDecimal v) {
+        if (v == null) return "";
+        return java.text.NumberFormat.getIntegerInstance(new java.util.Locale("es", "CO")).format(v.setScale(0, java.math.RoundingMode.HALF_UP));
+    }
+=======
+>>>>>>> d73906b8395de950b3b26a93762371c581175868
 }

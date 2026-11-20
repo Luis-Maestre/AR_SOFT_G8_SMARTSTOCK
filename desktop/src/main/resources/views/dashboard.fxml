@@ -5,9 +5,20 @@
 <VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
       fx:controller="co.edu.umb.smartstock.desktop.controller.DashboardController"
       spacing="12" styleClass="contenido">
+<<<<<<< HEAD
+    <HBox alignment="CENTER_LEFT" spacing="12">
+        <Label text="Dashboard" styleClass="titulo"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Label fx:id="estado" styleClass="aviso"/>
+        <Button text="Actualizar" onAction="#cargar"/>
+    </HBox>
+    <Label text="Resumen general del inventario de la droguería" styleClass="subtitulo"/>
+    <FlowPane fx:id="tarjetas" hgap="14" vgap="14"/>
+=======
     <Label text="Dashboard" styleClass="titulo"/>
     <Label text="Resumen general del inventario de la droguería" styleClass="subtitulo"/>
     <HBox fx:id="tarjetas" spacing="14"/>
+>>>>>>> d73906b8395de950b3b26a93762371c581175868
     <Label text="Alertas activas (stock mínimo)" styleClass="subtitulo-seccion"/>
     <ListView fx:id="listaAlertas" prefHeight="130"/>
     <Label text="Últimos movimientos" styleClass="subtitulo-seccion"/>

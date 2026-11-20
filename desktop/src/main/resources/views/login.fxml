@@ -5,14 +5,22 @@
 <StackPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
            fx:controller="co.edu.umb.smartstock.desktop.controller.LoginController"
            styleClass="fondo-login">
+<<<<<<< HEAD
+    <VBox spacing="14" maxWidth="340" maxHeight="380" alignment="CENTER_LEFT" styleClass="tarjeta">
+=======
     <VBox spacing="14" maxWidth="340" maxHeight="360" alignment="CENTER_LEFT" styleClass="tarjeta">
+>>>>>>> d73906b8395de950b3b26a93762371c581175868
         <Label text="SmartStock ERP" styleClass="titulo"/>
         <Label text="Control de inventario para droguerías" styleClass="subtitulo"/>
         <Label text="Correo"/>
         <TextField fx:id="correo" promptText="usuario@drogueria.com"/>
         <Label text="Contraseña"/>
         <PasswordField fx:id="clave" onAction="#ingresar"/>
+<<<<<<< HEAD
+        <Button fx:id="botonIngresar" text="Ingresar" onAction="#ingresar" maxWidth="Infinity" styleClass="boton"/>
+=======
         <Button text="Ingresar" onAction="#ingresar" maxWidth="Infinity" styleClass="boton"/>
+>>>>>>> d73906b8395de950b3b26a93762371c581175868
         <Label fx:id="mensaje" styleClass="aviso"/>
     </VBox>
 </StackPane>

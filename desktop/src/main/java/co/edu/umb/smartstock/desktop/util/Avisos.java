@@ -16,4 +16,21 @@ public final class Avisos {
         etiqueta.getStyleClass().setAll("label", "exito");
         etiqueta.setText(texto);
     }
+<<<<<<< HEAD
+
+    public static void info(Label etiqueta, String texto) {
+        etiqueta.getStyleClass().setAll("label", "aviso");
+        etiqueta.setText(texto);
+    }
+
+    /** Muestra una ventana de confirmacion; devuelve true si el usuario acepta. */
+    public static boolean confirmar(String texto) {
+        javafx.scene.control.Alert a = new javafx.scene.control.Alert(
+                javafx.scene.control.Alert.AlertType.CONFIRMATION, texto,
+                javafx.scene.control.ButtonType.OK, javafx.scene.control.ButtonType.CANCEL);
+        a.setHeaderText(null);
+        return a.showAndWait().filter(b -> b == javafx.scene.control.ButtonType.OK).isPresent();
+    }
+=======
+>>>>>>> d73906b8395de950b3b26a93762371c581175868
 }

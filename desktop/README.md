@@ -1,5 +1,32 @@
 # SmartStock ERP — Aplicación de escritorio (JavaFX)
 
+<<<<<<< HEAD
+Interfaz para el personal de la droguería. Habla con el backend por API REST con el token de la sesión.
+
+## Pantallas
+
+Login · Dashboard · Productos (crear, editar, desactivar) · Categorías · Proveedores · Inventario ·
+Movimientos · Reposiciones (generar sugerencias, confirmar, rechazar) · Reportes (CSV) ·
+Usuarios y Auditoría (solo administrador).
+
+El menú y los botones de escritura se ajustan al rol: el rol `usuario` es de solo lectura.
+
+## Cómo abrirla
+
+Requisitos: Java 17+ y Maven. Con el backend encendido (ver `backend/README.md`):
+
+```bash
+cd desktop
+mvn javafx:run
+```
+
+Si el backend no está en `http://localhost:8080/api`, indica la dirección:
+
+```bash
+mvn javafx:run -Dsmartstock.api=https://mi-servidor.example.com/api
+# o con la variable de entorno SMARTSTOCK_API_URL
+```
+=======
 Es la interfaz que usará el personal de la droguería. Se instala y se
 abre como un programa de escritorio, no en el navegador.
 
@@ -30,11 +57,24 @@ Requisitos: Java 17 o superior y Maven.
 Si el servidor está apagado, la aplicación abre igual; solo la pantalla
 Productos muestra el aviso "No se pudo conectar con el servidor". Al
 encenderlo, presionar **Actualizar**.
+>>>>>>> d73906b8395de950b3b26a93762371c581175868
 
 ## Organización
 
 ```
 src/main/java/co/edu/umb/smartstock/desktop/
+<<<<<<< HEAD
+├── MainApp.java, Navegador.java
+├── component/    # MenuLateral, TarjetaIndicador, FormularioProducto
+├── controller/   # Un controlador por pantalla
+├── model/Api.java        # Datos que entrega el servidor
+├── service/      # ApiClient (HTTP + token) y Sesion (usuario actual)
+└── util/         # Tablas, Avisos y Tareas (llamadas en segundo plano)
+src/main/resources/ views/*.fxml y css/estilos.css
+```
+
+Para agregar una pantalla: crear su `.fxml` y su controlador y añadir una línea en `MenuLateral.OPCIONES`.
+=======
 ├── MainApp.java        # Arranque
 ├── Navegador.java      # Cambia entre login y marco principal
 ├── component/          # Piezas visuales reutilizables
@@ -77,3 +117,4 @@ Pendiente para la Fase 3: login real, conectar las pantallas en modo
 demostración al servidor, proveedores (RF07) y auditoría (RF11).
 
 Las pantallas de referencia están en `docs/maqueta-ui/`.
+>>>>>>> d73906b8395de950b3b26a93762371c581175868

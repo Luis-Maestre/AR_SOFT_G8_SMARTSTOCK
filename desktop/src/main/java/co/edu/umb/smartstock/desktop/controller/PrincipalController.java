@@ -2,10 +2,18 @@ package co.edu.umb.smartstock.desktop.controller;
 
 import co.edu.umb.smartstock.desktop.Navegador;
 import co.edu.umb.smartstock.desktop.component.MenuLateral;
+<<<<<<< HEAD
+import co.edu.umb.smartstock.desktop.service.Sesion;
+=======
+>>>>>>> d73906b8395de950b3b26a93762371c581175868
 import java.io.IOException;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+<<<<<<< HEAD
+import javafx.scene.control.Label;
+=======
+>>>>>>> d73906b8395de950b3b26a93762371c581175868
 import javafx.scene.layout.BorderPane;
 
 /**
@@ -15,9 +23,19 @@ import javafx.scene.layout.BorderPane;
 public class PrincipalController {
 
     @FXML private BorderPane marco;
+<<<<<<< HEAD
+    @FXML private Label etiquetaSesion;
 
     @FXML
     private void initialize() {
+        if (Sesion.usuario() != null) {
+            etiquetaSesion.setText(Sesion.usuario().nombreCompleto() + " (" + Sesion.usuario().rol().replace('_', ' ') + ")");
+        }
+=======
+
+    @FXML
+    private void initialize() {
+>>>>>>> d73906b8395de950b3b26a93762371c581175868
         MenuLateral menu = new MenuLateral(this::mostrar);
         marco.setLeft(menu);
         menu.seleccionar("dashboard"); // pantalla inicial
@@ -35,6 +53,10 @@ public class PrincipalController {
 
     @FXML
     private void cerrarSesion() {
+<<<<<<< HEAD
+        Sesion.cerrar();
+=======
+>>>>>>> d73906b8395de950b3b26a93762371c581175868
         Navegador.irA("login");
     }
 }

@@ -3,6 +3,34 @@ package co.edu.umb.smartstock.model;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
+<<<<<<< HEAD
+@Entity
+@Table(name = "alerta")
+public class Alerta {
+    public static final String STOCK_MINIMO = "stock_minimo";
+    public static final String PENDIENTE = "pendiente";
+    public static final String RESUELTA = "resuelta";
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_alerta")
+    private Long idAlerta;
+
+    @Column(nullable = false, length = 30)
+    private String tipo = STOCK_MINIMO;
+
+    @Column(nullable = false, length = 255)
+    private String mensaje;
+
+    @Column(nullable = false)
+    private LocalDateTime fecha;
+
+    @Column(nullable = false, length = 20)
+    private String estado = PENDIENTE;
+
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "id_producto", nullable = false)
+=======
 /** Entidad Alerta — generada por stock minimo o proximidad de vencimiento. */
 @Entity
 @Table(name = "alerta")
@@ -19,6 +47,7 @@ public class Alerta {
 
     @ManyToOne
     @JoinColumn(name = "id_producto")
+>>>>>>> d73906b8395de950b3b26a93762371c581175868
     private Producto producto;
 
     public Long getIdAlerta() { return idAlerta; }
