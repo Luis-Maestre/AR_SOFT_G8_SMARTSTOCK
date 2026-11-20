@@ -274,7 +274,6 @@ Para el plan de pruebas manuales de extremo a extremo (login, roles, movimientos
 ## Seguridad
 
 - **No subas `.env`** ni contraseñas a Git. Si una contraseña se expuso, cámbiala en Supabase.
-- Cambia la contraseña del administrador inicial después del primer ingreso (`POST /api/auth/cambiar-password` o desde la aplicación).
 - Las credenciales de `dev` (`Admin123*` y el secreto de desarrollo) **no deben usarse en producción**.
 - Las contraseñas se guardan con BCrypt. La API usa JWT sin sesiones ni cookies.
 - RLS está activado en todas las tablas: la clave pública de Supabase no puede leer los datos. El backend se conecta con el usuario de la base de datos.
